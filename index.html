@@ -6,6 +6,8 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
+
   <title>Jason Madden - Portfolio</title>
 </head>
 
@@ -84,10 +86,53 @@
         </div>
       </div>
     </div>
+    <div class="row sage">
+      <div class="col s10 offset-s1 demonstration-container">
+        <h4>Conway's Game of Life</h4>
+        <p>Conway's game of life is a cellular automaton developed by a mathametician named John Horton Conway in 1970.
+          The evolution is based on the inital state which you get to set up below. Select the block type from the dropdown
+          and click start/stop to toggle playback. Next will move the board on a single step to show a single evolution.
+        </p>
+      </div>
+    </div>
+    <div class="row sage">
+      <div class="col s10 offset-s1">
+        
+      </div>
+    </div>
+    <div class="row sage">
+      <div class="col s3">
+        <select id='shape-select' class="browser-default">
+          <option value='block'>Block</option>
+          <option value='pulsar'>Pulsar</option>
+          <option value='glider'>Glider</option>
+          <option value='glider_gun'>Glider Gun</option>
+          <option value='blinker'>Blinker</option>
+          <option value='pentadecathelon'>Pentadecathelon</option>
+          <option value='toad'>Toad</option>
+          <option value='lwss'>Light Weight Space Ship</option>
+          <option value='beacon'>Beacon</option>
+        </select>
+      </div>
+      <div class="col s3">
+        <a class="waves-effect waves-light btn" onclick='nextGeneration()'>Next</a>
+      </div>
+      <div class="col s3">
+        <a class="waves-effect waves-light btn" onclick='toggleAnimate()'>Start/Stop</a>
+      </div>
+      <div class="col s3">
+        <a class="waves-effect waves-light btn" onclick='clearBoard()'>Clear</a>
+      </div>
+    </div>
+    <div class="row sage">
+      <div class="col s10 offset-s1" id="gol-container">
+      </div>
+    </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
   <script type="module" src="/main.js"></script>
+  <script src="./gameoflife.js"></script>
+
 </body>
 
 </html>
